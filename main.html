@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · Inside</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Disha</a>
+
+    <ul class="nav-links">
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="memories.html">Memories</a></li>
+      <li><a href="period.html">Period Care</a></li>
+      <li><a href="reasons-i-love-you.html">Why You</a></li>
+      <li><a href="future.html">Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN VIDEO + CONTENT -->
+  <section class="main-video">
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    >
+      <source src="assets/videos/intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- INTRO TEXT -->
+    <div class="video-intro">
+      <p>
+        This isn’t something you need to understand.<br />
+        It’s something you’re meant to feel,<br /><br />
+        For the days you smile,<br />
+        and for the days you don’t.
+      </p>
+    </div>
+
+    <!-- CHOSEN SECTION -->
+    <div class="chosen-section">
+      <h2>Why this exists</h2>
+
+      <p>
+        I didn’t make this to impress you.<br />
+        I made it because choosing you<br />
+        is something I do — consciously,<br />
+        intentionally,<br />
+        every single time.
+      </p>
+
+      <p>
+        This place exists so you never forget<br />
+        that you were never an option.
+      </p>
+
+      <p class="chosen-line">
+        You were chosen.
+      </p>
+
+      <button class="remember-btn" onclick="rememberChoice(this)">
+        Touch this when you need to remember.
+      </button>
+    </div>
+
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    function rememberChoice(button) {
+      button.innerText = "I’m still choosing you.";
+      button.disabled = true;
+      button.style.opacity = "0.8";
+      button.style.cursor = "default";
+    }
+  </script>
+
+</body>
+</html>

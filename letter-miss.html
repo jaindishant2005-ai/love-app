@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · When You Miss Me</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <section class="letter-page interactive">
+
+    <div class="letter-card soft-glow">
+
+      <h1>Open this when you miss me</h1>
+
+      <p>
+        If you’re here, it probably means you miss me.
+        And I want you to know I feel it too.
+        Not loudly.
+        But in the quiet moments when everything slows down.
+      </p>
+
+      <p>
+        I miss you in the smallest ways.
+        In pauses.
+        In thoughts that come uninvited.
+        In the comfort of knowing you exist.
+      </p>
+
+      <!-- INTERACTIVE MOMENT -->
+      <div class="touch-section">
+        <p class="touch-line">
+          Touch this if you need to feel close right now.
+        </p>
+
+        <button class="touch-btn" onclick="holdMoment(this)">
+          Hold here
+        </button>
+      </div>
+
+      <!-- HIDDEN MESSAGE -->
+      <p class="hidden-message">
+        You’re not alone in missing me.
+        I’m right here choosing you,
+        even in the quiet.
+      </p>
+
+      <a href="letters.html" class="back-link">
+        ← Go back
+      </a>
+
+    </div>
+
+  </section>
+
+  <script>
+    function holdMoment(button) {
+      button.style.display = "none";
+      document.querySelector(".touch-line").style.display = "none";
+      document.querySelector(".hidden-message").style.opacity = "1";
+    }
+  </script>
+
+</body>
+</html>

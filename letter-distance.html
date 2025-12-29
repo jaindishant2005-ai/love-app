@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · When We’re Apart</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<section class="letter-page interactive">
+  <div class="letter-card soft-glow">
+
+    <h1>Open this when we haven’t met for a few days</h1>
+
+    <p>
+      Distance can feel strange sometimes.
+      Not because something is missing,
+      but because something meaningful exists.
+    </p>
+
+    <p>
+      Even when days pass without seeing you,
+      nothing about us pauses.
+      My feelings don’t reduce with time.
+      They stay steady.
+    </p>
+
+    <div class="touch-section">
+      <p class="touch-line">
+        Touch this if the wait feels a little long.
+      </p>
+      <button class="touch-btn" onclick="holdMoment(this)">
+        I’m here
+      </button>
+    </div>
+
+    <p class="hidden-message">
+      Every day apart is still a day where I choose you.
+      We’re moving forward — even when we’re waiting.
+    </p>
+
+    <a href="letters.html" class="back-link">← Go back</a>
+
+  </div>
+</section>
+
+<script>
+function holdMoment(button) {
+  button.style.display = "none";
+  document.querySelector(".touch-line").style.display = "none";
+  document.querySelector(".hidden-message").style.opacity = "1";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · Reassurance</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<section class="letter-page interactive">
+  <div class="letter-card soft-glow">
+
+    <h1>Open this when you need reassurance</h1>
+
+    <p>
+      If doubt is loud right now,
+      let this page be quieter.
+    </p>
+
+    <p>
+      You were never an option.
+      Not then.
+      Not now.
+      Not on hard days.
+    </p>
+
+    <div class="touch-section">
+      <p class="touch-line">
+        Touch this when you need to remember.
+      </p>
+      <button class="touch-btn" onclick="holdMoment(this)">
+        Remember
+      </button>
+    </div>
+
+    <p class="hidden-message">
+      I choose you.
+      Not out of habit.
+      But out of certainty.
+      Every time.
+    </p>
+
+    <a href="letters.html" class="back-link">← Go back</a>
+
+  </div>
+</section>
+
+<script>
+function holdMoment(button) {
+  button.style.display = "none";
+  document.querySelector(".touch-line").style.display = "none";
+  document.querySelector(".hidden-message").style.opacity = "1";
+}
+</script>
+
+</body>
+</html>

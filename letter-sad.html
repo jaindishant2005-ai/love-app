@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · On Heavy Days</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<section class="letter-page interactive">
+  <div class="letter-card soft-glow">
+
+    <h1>Open this when your heart feels heavy</h1>
+
+    <p>
+      You don’t have to explain today.
+      You don’t have to make sense of it.
+      Some days are just heavier.
+    </p>
+
+    <p>
+      You’re allowed to rest.
+      You’re allowed to feel.
+      You don’t owe strength to anyone right now.
+    </p>
+
+    <div class="touch-section">
+      <p class="touch-line">
+        Touch this if you need permission to slow down.
+      </p>
+      <button class="touch-btn" onclick="holdMoment(this)">
+        It’s okay
+      </button>
+    </div>
+
+    <p class="hidden-message">
+      Even on your quietest days,
+      you are still enough.
+      And you are still deeply loved.
+    </p>
+
+    <a href="letters.html" class="back-link">← Go back</a>
+
+  </div>
+</section>
+
+<script>
+function holdMoment(button) {
+  button.style.display = "none";
+  document.querySelector(".touch-line").style.display = "none";
+  document.querySelector(".hidden-message").style.opacity = "1";
+}
+</script>
+
+</body>
+</html>

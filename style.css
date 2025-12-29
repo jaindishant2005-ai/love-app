@@ -1,0 +1,581 @@
+ /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   HOME / HERO SECTION
+========================= */
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("assets/images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* HOME CONTENT */
+.home-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: flex-start;
+  padding-left: 12%;
+  padding-right: 20px;
+
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.home-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 12px;
+}
+
+.home-content p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 42px;
+  opacity: 0.95;
+}
+
+/* ENTER BUTTON */
+.enter-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.enter-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   MAIN VIDEO PAGE
+========================= */
+
+.main-video {
+  min-height: 100vh;
+  padding-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.08),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #1e293b,
+      #334155,
+      #1e293b
+    );
+}
+
+
+.main-video video {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* VIDEO INTRO TEXT */
+.video-intro {
+  margin-top: 32px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.video-intro p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+/* CHOSEN SECTION */
+.chosen-section {
+  margin-top: 80px;
+  max-width: 600px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.chosen-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+.chosen-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.chosen-line {
+  margin-top: 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.remember-btn {
+  margin-top: 32px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-style: italic;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.remember-btn:hover {
+  opacity: 1;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 28px;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(10px);
+
+  z-index: 10;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   PERIOD CARE PAGE
+========================= */
+
+.period-page {
+  min-height: 100vh;
+  padding-top: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(to bottom, #fff1f2, #ffe4e6);
+}
+
+.period-card {
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 30px;
+  border-radius: 22px;
+
+  color: #4a1d2f;
+  line-height: 1.8;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   MOBILE FIXES
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .home-content {
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* HOME SECTION */
+  .home {
+    height: 100vh;
+    background-position: center top; /* keeps head visible */
+  }
+
+  /* DARKER OVERLAY FOR READABILITY */
+  .overlay {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  /* CONTENT – PUSHED DOWN SAFELY */
+  .home-content {
+    padding: 0 20px;
+
+    align-items: center;
+    text-align: center;
+
+    /* KEY FIX */
+    justify-content: flex-end;
+    padding-bottom: 18vh; /* pushes content below face */
+  }
+
+  .home-content h1 {
+    font-size: 2.1rem;
+    margin-bottom: 8px;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 26px;
+  }
+
+  .enter-btn {
+    padding: 14px 34px;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   LETTERS PAGE (CATEGORY)
+========================= */
+
+.letters-page {
+  min-height: 100vh;
+  padding-top: 120px; /* navbar space */
+  padding-bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(
+    to bottom,
+    #f8fafc,
+    #f1f5f9
+  );
+}
+
+.letters-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.letters-subtitle {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.letters-list {
+  width: 100%;
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.letters-list a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  color: #334155;
+
+  padding: 18px 22px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.letters-list a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   LETTER PAGES
+========================= */
+
+.letter-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background: linear-gradient(
+    to bottom,
+    #f8fafc,
+    #eef2f7
+  );
+}
+
+.letter-card {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.9);
+
+  padding: 44px 36px;
+  border-radius: 22px;
+
+  font-family: 'Inter', sans-serif;
+  line-height: 1.9;
+  color: #334155;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.letter-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 28px;
+  color: #1e293b;
+}
+
+.letter-card p {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   INTERACTIVE LETTER STYLE
+========================= */
+.letter-page.interactive {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #e0f2fe,
+      #cfe9fb,
+      #e0f2fe
+    );
+}
+
+
+.soft-glow {
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.08),
+    0 0 60px rgba(255, 255, 255, 0.6) inset;
+}
+
+.touch-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.touch-line {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.touch-btn {
+  padding: 14px 34px;
+  border-radius: 40px;
+  border: none;
+
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.touch-btn:hover {
+  transform: scale(1.05);
+}
+
+.hidden-message {
+  opacity: 0;
+  margin-top: 30px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #334155;
+
+  transition: opacity 0.8s ease;
+}
+
+
+#why-you {
+  display: block !important;
+}
+
+
+#why-you {
+  background: #fff1f2; /* same soft pink as period section */
+  min-height: calc(100vh - 60px); /* below navbar */
+  padding: 20px;
+}
+
+.why-container {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  min-height: 300px; /* FORCE HEIGHT */
+}
+
+.scratch-card {
+  position: relative;
+  height: 120px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f472b6, #a78bfa);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* =========================
+   WHY YOU – SCRATCH FIX
+========================= */
+
+.hidden-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px;
+  text-align: center;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.scratch-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.9;
+
+  pointer-events: none;
+}
+
+.scratch-card canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+

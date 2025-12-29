@@ -1,0 +1,210 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reasons I Love You</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1e1b4b, #020617);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #e5e7eb;
+    }
+
+    .phone {
+      width: 360px;
+      height: 720px;
+      background: rgba(2, 6, 23, 0.85);
+      border-radius: 30px;
+      padding: 22px;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 22px;
+    }
+
+    .scratch-card {
+      position: relative;
+      height: 120px;
+      margin-bottom: 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f472b6, #a78bfa);
+      overflow: hidden;
+    }
+
+    .scratch-card.gold {
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+    }
+
+    .hidden-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      z-index: 1;
+      color: white;
+    }
+
+    .scratch-hint {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 3;
+      color: white;
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .back a {
+      color: #c7d2fe;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="phone">
+    <h1>Reasons I Love You</h1>
+    <div class="subtitle">Scratch them slowly 💗</div>
+
+    <!-- REASONS -->
+    <div class="scratch-card">
+      <div class="hidden-text">Because you feel like home, no matter where I am.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because your smile fixes parts of me you never broke.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because I can be quiet with you and still feel understood.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because you care deeply, even when you pretend you don’t.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because life feels lighter when you’re around.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because loving you feels safe and real.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because you make ordinary moments special.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="scratch-card">
+      <div class="hidden-text">Because I choose you — every single day.</div>
+      <div class="scratch-hint">Scratch ✨</div>
+      <canvas></canvas>
+    </div>
+
+    <!-- GOLDEN FINAL CARD -->
+    <div class="scratch-card gold">
+      <div class="hidden-text">
+        Because loving you is my favourite thing in this lifetime.
+      </div>
+      <div class="scratch-hint">One last scratch 💛</div>
+      <canvas></canvas>
+    </div>
+
+    <div class="back">
+      <a href="main.html">← Back to app</a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".scratch-card").forEach(card => {
+      const canvas = card.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+
+      function init() {
+        canvas.width = card.offsetWidth;
+        canvas.height = card.offsetHeight;
+
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillStyle = "#0f172a";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.globalCompositeOperation = "destination-out";
+      }
+
+      init();
+
+      let scratching = false;
+
+      canvas.addEventListener("pointerdown", () => scratching = true);
+      canvas.addEventListener("pointerup", () => scratching = false);
+      canvas.addEventListener("pointerleave", () => scratching = false);
+
+      canvas.addEventListener("pointermove", e => {
+        if (!scratching) return;
+        const rect = canvas.getBoundingClientRect();
+        ctx.beginPath();
+        ctx.arc(e.clientX - rect.left, e.clientY - rect.top, 18, 0, Math.PI * 2);
+        ctx.fill();
+        card.querySelector(".scratch-hint").style.opacity = "0";
+      });
+    });
+  </script>
+</body>
+</html>

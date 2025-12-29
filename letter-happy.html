@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Disha · When You’re Smiling</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<section class="letter-page interactive">
+  <div class="letter-card soft-glow">
+
+    <h1>Open this when you’re smiling</h1>
+
+    <p>
+      If you’re smiling right now,
+      I hope you let yourself enjoy it fully.
+      Moments like this matter.
+    </p>
+
+    <p>
+      Your happiness is not small.
+      It changes rooms.
+      It softens days.
+      It stays with me.
+    </p>
+
+    <div class="touch-section">
+      <p class="touch-line">
+        Touch this to hold onto this feeling.
+      </p>
+      <button class="touch-btn" onclick="holdMoment(this)">
+        Hold it
+      </button>
+    </div>
+
+    <p class="hidden-message">
+      You deserve days like this.
+      And many more that feel just as light.
+    </p>
+
+    <a href="letters.html" class="back-link">← Go back</a>
+
+  </div>
+</section>
+
+<script>
+function holdMoment(button) {
+  button.style.display = "none";
+  document.querySelector(".touch-line").style.display = "none";
+  document.querySelector(".hidden-message").style.opacity = "1";
+}
+</script>
+
+</body>
+</html>
